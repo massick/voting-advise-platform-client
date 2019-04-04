@@ -1,17 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './home.css'
+import Button from './button'
+import styles from './home.module.css'
 
 const Home = ({ goToEnabled, goToStep }) => {
   return (
     <div className={styles.content}>
-      some great intro balba lbalbalablabl
+      <br />
+      <p>This app is gonna help you to decide what to vote!</p>
+      <p>
+        Comparing your answers with the ones with all the politic parties you'll
+        know who to vote! (TODO: find better copy )
+      </p>
+
       <br />
       <br />
-      <br />
-      <button disabled={!goToEnabled} onClick={goToStep}>
-        start!
-      </button>
+
+      <Button disabled={!goToEnabled} onClick={goToStep} expanded>
+        Start!
+      </Button>
     </div>
   )
 }

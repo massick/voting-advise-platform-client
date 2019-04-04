@@ -12,7 +12,7 @@ import Home from './components/home'
 import Question from './components/question'
 import Form from './components/form'
 import Result from './components/result'
-import './app.css'
+import styles from './app.module.css'
 
 class App extends Component {
   componentDidMount () {
@@ -31,34 +31,40 @@ class App extends Component {
     } = this.props
 
     return (
-      <div className='App'>
-        {step === 'home' && (
-          <Home goToEnabled={loaded} goToStep={() => goToStep('question')} />
-        )}
-        {step === 'question' && (
-          <Question
-            submitting={submitting}
-            setAnswer={setAnswer}
-            question={questionsData.find(i => i.id === current)}
-            goBack={() => {
-              const currentIdx = questionsData.findIndex(i => i.id === current)
+      <div className={styles.container}>
+        <div className={styles.header}>Voting Advise Platform</div>
 
-              return currentIdx === 0
-                ? goToStep('home')
-                : setCurrentQuestion(questionsData[currentIdx - 1].id)
-            }}
-          />
-        )}
-        {step === 'form' && (
-          <Form
-            fetching={fetching}
-            getResult={getResult}
-            goBack={() => goToStep('question')}
-          />
-        )}
-        {step === 'result' && (
-          <Result result={resultData} goBack={() => goToStep('form')} />
-        )}
+        <div className={styles.content}>
+          {step === 'home' && (
+            <Home goToEnabled={loaded} goToStep={() => goToStep('question')} />
+          )}
+          {step === 'question' && (
+            <Question
+              submitting={submitting}
+              setAnswer={setAnswer}
+              question={questionsData.find(i => i.id === current)}
+              goBack={() => {
+                const currentIdx = questionsData.findIndex(
+                  i => i.id === current
+                )
+
+                return currentIdx === 0
+                  ? goToStep('home')
+                  : setCurrentQuestion(questionsData[currentIdx - 1].id)
+              }}
+            />
+          )}
+          {step === 'form' && (
+            <Form
+              fetching={fetching}
+              getResult={getResult}
+              goBack={() => goToStep('question')}
+            />
+          )}
+          {step === 'result' && (
+            <Result result={resultData} goBack={() => goToStep('form')} />
+          )}
+        </div>
       </div>
     )
   }

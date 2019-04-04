@@ -1,12 +1,15 @@
 import { fetchResult } from '../api'
 import { goToStep } from './ui'
 
-export const getResult = () => async dispatch => {
-  console.log('heeeee')
+export const getResult = () => async (dispatch, getState) => {
+  const {
+    ui: { uuid }
+  } = getState()
+
   dispatch({ type: 'GET_RESULT_REQUEST' })
 
   try {
-    const data = await fetchResult()
+    const data = await fetchResult(uuid)
 
     dispatch({
       type: 'GET_RESULT_SUCCESS',

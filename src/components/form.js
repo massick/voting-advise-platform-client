@@ -1,19 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './home.css'
+import Button from './button'
+import styles from './home.module.css'
 
 const Form = ({ fetching, getResult, goBack }) => {
   return (
     <div className={styles.content}>
-      Click the button to see your result
+      <br />
+      <p>Click here to see the result!</p>
+
       <br />
       <br />
-      <button disabled={fetching} onClick={getResult}>
-        calculate result
-      </button>
+
+      <Button disabled={fetching} onClick={getResult} expanded>
+        Calculate result!
+      </Button>
+
       <br />
       <br />
-      <button onClick={goBack}>back</button>
+      <a onClick={goBack}>back</a>
     </div>
   )
 }

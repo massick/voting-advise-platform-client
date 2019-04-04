@@ -1,28 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './home.css'
+import Button from './button'
+import styles from './home.module.css'
 
 const Home = ({ submitting, setAnswer, question, goBack }) => {
-  console.log('aaaaa', question)
-
   return (
     <div className={styles.content}>
-      {question.title}
+      <br />
+      <p>{question.title}</p>
       <br />
       <br />
+      <Button disabled={submitting} onClick={() => setAnswer('yes')}>
+        Yes
+      </Button>
+      &nbsp;
+      <Button disabled={submitting} onClick={() => setAnswer('neutral')}>
+        Don't care
+      </Button>
+      &nbsp;
+      <Button disabled={submitting} onClick={() => setAnswer('no')} action>
+        No
+      </Button>
       <br />
-      <button disabled={submitting} onClick={() => setAnswer('yes')}>
-        yes
-      </button>
-      <button disabled={submitting} onClick={() => setAnswer('neutral')}>
-        don't care
-      </button>
-      <button disabled={submitting} onClick={() => setAnswer('no')}>
-        no
-      </button>
-
       <br />
-      <button onClick={goBack}>back</button>
+      <a onClick={goBack}>back</a>
     </div>
   )
 }

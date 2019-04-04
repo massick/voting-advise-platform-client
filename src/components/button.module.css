@@ -1,0 +1,54 @@
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem 0;
+  font-family: inherit;
+  padding: 0.85em 1em;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  background-color: #52b68d;
+  color: #fefefe;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #439e78;
+  color: #fefefe;
+}
+
+.button.expanded {
+  display: block;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.button.action {
+  background-color: #ff7275;
+  color: #fefefe;
+}
+.button.action:hover,
+.button:focus {
+  background-color: #ff4d51;
+  color: #fefefe;
+}
+
+.button.screaming {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.button.rounded {
+  border-radius: 6px;
+}
+
+.button.disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}

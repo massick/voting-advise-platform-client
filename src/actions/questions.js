@@ -1,11 +1,15 @@
 import { fetchQuestions, postAnswer } from '../api'
 import { goToStep } from './ui'
 
-export const getQuestions = () => async dispatch => {
+export const getQuestions = () => async (dispatch, getState) => {
+  const {
+    ui: { uuid }
+  } = getState()
+
   dispatch({ type: 'GET_QUESTIONS_REQUEST' })
 
   try {
-    const data = await fetchQuestions()
+    const data = await fetchQuestions(uuid)
 
     dispatch({
       type: 'GET_QUESTIONS_SUCCESS',
@@ -17,13 +21,14 @@ export const getQuestions = () => async dispatch => {
 }
 export const setAnswer = vote => async (dispatch, getState) => {
   const {
-    questions: { data, current }
+    questions: { data, current },
+    ui: { uuid }
   } = getState()
 
   dispatch({ type: 'SET_ANSWER_REQUEST', questionId: current })
 
   try {
-    await postAnswer(current, vote)
+    await postAnswer(current, vote, uuid)
     const currentIdx = data.findIndex(i => i.id === current)
 
     dispatch({

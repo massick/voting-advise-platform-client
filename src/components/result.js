@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './home.css'
+import styles from './home.module.css'
 
 const Result = ({ result, goBack }) => {
   console.log('rr', result)
