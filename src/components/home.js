@@ -16,7 +16,15 @@ const Home = ({ goToEnabled, goToStep }) => {
       <br />
       <br />
 
-      <Button disabled={!goToEnabled} onClick={goToStep} expanded>
+      <Button
+        disabled={!goToEnabled}
+        onClick={goToStep}
+        expanded
+        screaming
+        glow
+        oval
+        action
+      >
         Start!
       </Button>
     </div>

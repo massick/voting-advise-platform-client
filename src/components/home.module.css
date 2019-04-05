@@ -2,3 +2,58 @@
   font-size: 1.2rem;
   color: #444444;
 }
+
+.back {
+  color: #999999;
+  font-size: 1rem;
+}
+.back::before {
+  content: "← ";
+}
+
+.result {
+  text-align: left;
+  padding: 0 0 1rem 0;
+}
+
+.result_name {
+  font-weight: bold;
+  padding: 0 0.25rem;
+}
+
+.score_red {
+  color: #dc3545;
+  font-weight: bold;
+  padding: 0 0.25rem;
+}
+
+.score_yellow {
+  color: #ffc107;
+  font-weight: bold;
+  padding: 0 0.25rem;
+}
+
+.score_green {
+  color: #52b68d;
+  font-weight: bold;
+  padding: 0 0.25rem;
+}
+
+.why {
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+.why_title {
+  font-weight: bold;
+  color: #52b68d;
+}
+
+.why_list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.why_list li {
+  padding: 0.25rem 0;
+}

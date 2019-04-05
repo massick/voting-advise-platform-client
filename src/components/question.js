@@ -10,20 +10,32 @@ const Home = ({ submitting, setAnswer, question, goBack }) => {
       <p>{question.title}</p>
       <br />
       <br />
-      <Button disabled={submitting} onClick={() => setAnswer('yes')}>
+      <Button disabled={submitting} onClick={() => setAnswer('yes')} screaming>
         Yes
       </Button>
       &nbsp;
-      <Button disabled={submitting} onClick={() => setAnswer('neutral')}>
+      <Button
+        hollow
+        disabled={submitting}
+        onClick={() => setAnswer('neutral')}
+        screaming
+      >
         Don't care
       </Button>
       &nbsp;
-      <Button disabled={submitting} onClick={() => setAnswer('no')} action>
+      <Button
+        disabled={submitting}
+        onClick={() => setAnswer('no')}
+        action
+        screaming
+      >
         No
       </Button>
       <br />
       <br />
-      <a onClick={goBack}>back</a>
+      <a className={styles.back} onClick={goBack}>
+        back
+      </a>
     </div>
   )
 }

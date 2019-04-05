@@ -12,13 +12,23 @@ const Form = ({ fetching, getResult, goBack }) => {
       <br />
       <br />
 
-      <Button disabled={fetching} onClick={getResult} expanded>
+      <Button
+        disabled={fetching}
+        onClick={getResult}
+        expanded
+        screaming
+        glow
+        oval
+        action
+      >
         Calculate result!
       </Button>
 
       <br />
       <br />
-      <a onClick={goBack}>back</a>
+      <a className={styles.back} onClick={goBack}>
+        back
+      </a>
     </div>
   )
 }

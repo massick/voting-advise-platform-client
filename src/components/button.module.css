@@ -14,41 +14,69 @@
   cursor: pointer;
   background-color: #52b68d;
   color: #fefefe;
+  border-radius: 6px;
 }
-
 .button:hover,
 .button:focus {
   background-color: #439e78;
   color: #fefefe;
 }
-
 .button.expanded {
   display: block;
   width: 100%;
   margin-right: 0;
   margin-left: 0;
 }
-
 .button.action {
   background-color: #ff7275;
   color: #fefefe;
 }
 .button.action:hover,
-.button:focus {
+.button.action:focus {
   background-color: #ff4d51;
   color: #fefefe;
 }
-
 .button.screaming {
   font-weight: bold;
   text-transform: uppercase;
 }
-
-.button.rounded {
-  border-radius: 6px;
-}
-
 .button.disabled {
   opacity: 0.25;
   cursor: not-allowed;
+}
+.button.hollow {
+  border: 1px solid #52b68d;
+  color: #52b68d;
+}
+.button.hollow,
+.button.hollow:hover,
+.button.hollow:focus {
+  background: transparent;
+}
+.button.hollow:hover,
+.button.hollow:focus {
+  border-color: #275d47;
+  color: #275d47;
+}
+.button.hollow.action {
+  border: 1px solid #ff7275;
+  color: #ff7275;
+}
+.button.hollow.action:hover,
+.button.hollow.action:focus {
+  border-color: #b90004;
+  color: #b90004;
+}
+.button.oval {
+  border-radius: 2rem;
+}
+.button.glow {
+  display: block;
+  margin: 2rem auto 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 1.5rem;
+}
+.button.glow.action {
+  color: #ff7275;
+  background-color: white;
 }
