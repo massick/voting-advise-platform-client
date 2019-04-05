@@ -31,6 +31,9 @@ export default (state = initialState, action) => {
     case 'SET_CURRENT_QUESTION':
       return { ...state, current: action.current }
 
+    case 'SUBMIT_POLL_SUCCESS':
+      return initialState
+
     default:
       return state
   }

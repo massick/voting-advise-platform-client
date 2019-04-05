@@ -11,6 +11,8 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case 'GOTO_STEP':
       return { ...state, step: action.step }
+    case 'SUBMIT_POLL_SUCCESS':
+      return { ...state, step: 'home' }
     default:
       return state
   }

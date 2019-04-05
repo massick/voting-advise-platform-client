@@ -11,7 +11,29 @@
 }
 
 .content {
-  margin: 2rem;
-  margin: 0 auto;
+  padding: 2rem;
+  margin: 0 auto 3rem;
   max-width: 500px;
+}
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #52b68d;
+  color: #ffffff;
+  padding: 0.25rem 0;
+}
+
+.nav a {
+  color: #ffffff;
+  padding: 0.25rem 0;
+  display: block;
+}
+
+.nav_ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }

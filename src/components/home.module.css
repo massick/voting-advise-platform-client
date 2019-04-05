@@ -57,3 +57,8 @@
 .why_list li {
   padding: 0.25rem 0;
 }
+
+.error {
+  color: #dc3545;
+  padding-bottom: 1rem;
+}

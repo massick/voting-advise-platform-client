@@ -1,15 +1,17 @@
 import { fetchResult } from '../api'
 import { goToStep } from './ui'
 
-export const getResult = () => async (dispatch, getState) => {
+export const getResult = pollId => async (dispatch, getState) => {
   const {
     ui: { uuid }
   } = getState()
 
   dispatch({ type: 'GET_RESULT_REQUEST' })
 
+  console.log('addd', pollId)
+
   try {
-    const data = await fetchResult(uuid)
+    const data = await fetchResult(uuid, pollId)
 
     dispatch({
       type: 'GET_RESULT_SUCCESS',

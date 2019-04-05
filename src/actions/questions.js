@@ -1,7 +1,7 @@
 import { fetchQuestions, postAnswer } from '../api'
 import { goToStep } from './ui'
 
-export const getQuestions = () => async (dispatch, getState) => {
+export const getQuestions = pollId => async (dispatch, getState) => {
   const {
     ui: { uuid }
   } = getState()
@@ -9,7 +9,7 @@ export const getQuestions = () => async (dispatch, getState) => {
   dispatch({ type: 'GET_QUESTIONS_REQUEST' })
 
   try {
-    const data = await fetchQuestions(uuid)
+    const data = await fetchQuestions(uuid, pollId)
 
     dispatch({
       type: 'GET_QUESTIONS_SUCCESS',
