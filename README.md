@@ -1,3 +1,114 @@
+# Voting Advise Platform Frontend
+
+Create your own polls and political parties answers for helping people to choose the right party.
+
+It has [its ruby on rails api app](https://github.com/diaclavijo/voting-advise-platform-api)
+
+This App was sponsored by [Helpling](https://www.helpling.de/careers#positions) and
+developed inside [Tamedia Hackathon 19](https://harryf.github.io/tamedia-hackdays/).
+
+The project is still missing functionality, below the road map.
+
+# Road map
+
+- Support user authentication and registration. Currently it is using a uuid sent by the client
+  to identify the user.
+- Give the possibility to an user to create and attend more than 1 poll (clear the local storage)
+- Add better UI (instead of JSON) to create a new poll
+- Support Poll Edition
+- Support Poll stats check: Check answers
+- Ask the user filling the poll more data: age, genre and email.
+
+# How to start the application
+
+- export the envar `REACT_APP_API_BASE_URL` to set the url of your apis
+- run `yarn start`
+
+# How to create a new pool
+
+Go to `/new` and fill the textfield with a JSON containing:
+
+- a list of parties,
+- a list of question with the response of every parties, here's an example:
+
+```
+{
+  "name": "New Custom Example Shiny Poll",
+  "questions": [
+    {
+      "title": "Invest more money in Erasmus: the Union programme for education, training, youth and sport",
+      "body": "",
+      "political_party_answers": [
+        {
+          "political_party_name": "Party1",
+          "vote": "yes"
+        },
+        {
+          "political_party_name": "Party2",
+          "vote": "neutral"
+        },
+        {
+          "political_party_name": "Party3",
+          "vote": "neutral"
+        },
+        {
+          "political_party_name": "Party4",
+          "vote": "no"
+        }
+      ]
+    },
+    {
+      "title": "Approve resolution about emergency situation in Venezuela",
+      "body": "",
+      "political_party_answers": [
+        {
+          "political_party_name": "Party1",
+          "vote": "neutral"
+        },
+        {
+          "political_party_name": "Party2",
+          "vote": "neutral"
+        },
+        {
+          "political_party_name": "Party3",
+          "vote": "no"
+        },
+        {
+          "political_party_name": "Party4",
+          "vote": "yes"
+        }
+      ]
+    },
+    {
+      "title": "Establishment of a framework to facilitate sustainable investment",
+      "body": "",
+      "political_party_answers": [
+        {
+          "political_party_name": "Party1",
+          "vote": "neutral"
+        },
+        {
+          "political_party_name": "Party2",
+          "vote": "no"
+        },
+        {
+          "political_party_name": "Party3",
+          "vote": "neutral"
+        },
+        {
+          "political_party_name": "Party4",
+          "vote": "yes"
+        }
+      ]
+    }
+  ]
+}
+```
+
+- after that you will see a link that you can share or use to take the poll.
+
+# Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

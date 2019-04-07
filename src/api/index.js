@@ -1,15 +1,13 @@
 import 'whatwg-fetch'
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL
 
 export const fetchQuestions = (uuid, pollId = 1) =>
-  fetch(
-    `https://hackvoting-advise-platform-api.herokuapp.com/polls/${pollId}/questions?uuid=${uuid}`,
-    {
-      method: 'GET'
-    }
-  ).then(res => res.json())
+  fetch(`${apiBaseUrl}/polls/${pollId}/questions?uuid=${uuid}`, {
+    method: 'GET'
+  }).then(res => res.json())
 
 export const postAnswer = (questionId, vote, uuid) =>
-  fetch('https://hackvoting-advise-platform-api.herokuapp.com/answers', {
+  fetch(`${apiBaseUrl}/answers`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -18,15 +16,12 @@ export const postAnswer = (questionId, vote, uuid) =>
   }).then(res => res.json())
 
 export const fetchResult = (uuid, pollId = 1) =>
-  fetch(
-    `https://hackvoting-advise-platform-api.herokuapp.com/polls/${pollId}/result?uuid=${uuid}`,
-    {
-      method: 'GET'
-    }
-  ).then(res => res.json())
+  fetch(`${apiBaseUrl}/polls/${pollId}/result?uuid=${uuid}`, {
+    method: 'GET'
+  }).then(res => res.json())
 
 export const postPoll = (text, uuid) =>
-  fetch(`https://hackvoting-advise-platform-api.herokuapp.com/polls`, {
+  fetch(`${apiBaseUrl}/polls`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
