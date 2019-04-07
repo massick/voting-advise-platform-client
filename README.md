@@ -7,7 +7,7 @@ It has [its ruby on rails api app](https://github.com/diaclavijo/voting-advise-p
 This App was sponsored by [Helpling](https://www.helpling.de/careers#positions) and
 developed inside [Tamedia Hackathon 19](https://harryf.github.io/tamedia-hackdays/).
 
-The project is still missing functionality, below the road map.
+Disclaimer: this project is still missing functionality and was create for demo purpose, below the road map to make it "production ready".
 
 # Road map
 
